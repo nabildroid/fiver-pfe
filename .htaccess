@@ -1,0 +1,21 @@
+# Rewrite requests to /pages folder
+RewriteEngine On
+RewriteRule ^$ pages/ [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ pages/$1 [L]
+
+# Block file listing
+Options -Indexes
+
+# Allow only .css and .php files (from pages folder) and all images
+<FilesMatch "\.(css|php|jpg|jpeg|png|gif)$">
+  Order Deny,Allow
+  Deny from all
+  Allow from env=allow
+</FilesMatch>
+
+# Remove extension from .php files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
