@@ -68,32 +68,30 @@ $people = array_map(function ($person) {
                 <?php endforeach; ?>
             </select>
         </div>
-        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md">Select</button>
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md">اختيار</button>
     </form>
     <div>
-        <h2 class="text-lg font-bold mb-2">Student Information</h2>
+        <h2 class="text-lg font-bold mb-2">بيانات المتدرب</h2>
 
         <?php if (isset($_GET['student'])) : ?>
-            <p><span class="font-medium">Name:</span> <?= $student->first_name ?></p>
-            <p><span class="font-medium">Student ID:</span> <?= $student->id ?></p>
-            <p><span class="font-medium">Job Title:</span> <?= $student->university ?></p>
-            <p><span class="font-medium">Directorate:</span> <?= $student->directorate ?></p>
-            <p><span class="font-medium">Department:</span> Development</p>
+            <p><span class="font-medium">الاسم:</span> <?= $student->first_name ?></p>
+            <p><span class="font-medium"> ID:</span> <?= $student->id ?></p>
+            <p><span class="font-medium">الجامعة:</span> <?= $student->university ?></p>
+            <p><span class="font-medium">المديرية:</span> <?= $student->directorate ?></p>
         <?php endif; ?>
 
         <?php if (!isset($_GET['student'])) : ?>
 
-            <p><span class="font-medium">Name:</span> <?= $employee->first_name ?></p>
-            <p><span class="font-medium">Job Title:</span> <?= $employee->job_title ?></p>
-            <p><span class="font-medium">Directorate:</span> <?= $employee->directorate ?></p>
-            <p><span class="font-medium">Department:</span> Development</p>
+            <p><span class="font-medium">الاسم:</span> <?= $employee->first_name ?></p>
+            <p><span class="font-medium">المهنة:</span> <?= $employee->job_title ?></p>
+            <p><span class="font-medium">المديرية:</span> <?= $employee->directorate ?></p>
         <?php endif; ?>
 
     </div>
 </div>
 <div class="px-4 py-8">
     <div class="flex items-start space-x-4">
-        <h2 class="text-lg font-bold mb-4">Program Assignment</h2>
+        <h2 class="text-lg font-bold mb-4">تعيين البرامج</h2>
         <a href="./assign.php<?= isset($_GET["student"]) ? "?student=" . $student->id : "?employee=" . $employee->id ?>" class="bg-green-500 block text-white py-1 px-2 rounded-md">Add</a>
 
     </div>
@@ -102,12 +100,12 @@ $people = array_map(function ($person) {
         <thead>
             <tr class="bg-gray-200">
                 <th class="py-2 px-4">ID</th>
-                <th class="py-2 px-4">Name</th>
-                <th class="py-2 px-4">Institution</th>
-                <th class="py-2 px-4">Internal/External</th>
-                <th class="py-2 px-4">location</th>
-                <th class="py-2 px-4">number of hours</th>
-                <th class="py-2 px-4">number of days</th>
+                <th class="py-2 px-4">اسم البرامج</th>
+                <th class="py-2 px-4">المؤسسة</th>
+                <th class="py-2 px-4">خارجي او داخلي</th>
+                <th class="py-2 px-4">الموقع</th>
+                <th class="py-2 px-4">عدد الساعات</th>
+                <th class="py-2 px-4">عدد الايام</th>
                 <th class="py-2 px-4"></th>
                 <th class="py-2 px-4"></th>
             </tr>
@@ -123,11 +121,14 @@ $people = array_map(function ($person) {
                     <td class="py-2 px-4"><?= $study->program->location ?></td>
                     <td class="py-2 px-4"><?= $study->program->number_of_hours ?></td>
                     <td class="py-2 px-4"><?= $study->program->number_of_days ?></td>
+
+                    <?php if (isset($_GET["employee"])) : ?>
+                        <td class="py-2 px-4">
+                            <a href="./uploadNaming.php?employee=<?= $_GET["employee"] ?>" class="bg-blue-500 text-white py-1 px-2 rounded-md">كتاب التسمية</a>
+                        </td>
+                    <?php endif; ?>
                     <td class="py-2 px-4">
-                        <button class="bg-blue-500 text-white py-1 px-2 rounded-md">Naming Book</button>
-                    </td>
-                    <td class="py-2 px-4">
-                        <a href="../uploads/<?= $study->id ?>.pdf" class="bg-blue-500 text-white py-1 px-2 rounded-md">Certification</a>
+                        <a href="../uploads/<?= $study->id ?>.pdf" class="bg-blue-500 text-white py-1 px-2 rounded-md">الشهادة</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

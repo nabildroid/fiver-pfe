@@ -47,7 +47,7 @@ $students = Student::getAll($db)["students"];
 
             <div>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    <a href="addTrainee.php">Add Trainee</a>
+                    <a href="addTrainee.php">اضف متدرب</a>
                 </button>
             </div>
             <div class="flex-1"></div>
@@ -59,11 +59,11 @@ $students = Student::getAll($db)["students"];
                 <thead class="text-left">
                     <tr>
                         <th class="px-4 py-2 shrink-0">ID</th>
-                        <th class="px-4 py-2 shrink-0">Name</th>
-                        <th class="px-4 py-2 shrink-0">university</th>
-                        <th class="px-4 py-2 shrink-0">email</th>
-                        <th class="px-4 py-2 shrink-0">department</th>
-                        <th class="px-4 py-2 shrink-0">specialization</th>
+                        <th class="px-4 py-2 shrink-0">الاسم</th>
+                        <th class="px-4 py-2 shrink-0">الجامعة</th>
+                        <th class="px-4 py-2 shrink-0">البريد الاليكتوني</th>
+                        <th class="px-4 py-2 shrink-0">القسم</th>
+                        <th class="px-4 py-2 shrink-0">التخصص</th>
 
                     </tr>
                 </thead>
@@ -81,16 +81,16 @@ $students = Student::getAll($db)["students"];
 
 
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                <a href="./trainingHistory.php?student=<?= $student->id ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">All Programs</a>
+                                <a href="./trainingHistory.php?student=<?= $student->id ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">جميع البرامج</a>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                <a href="./trainingPlanning.php?student=<?= $student->id ?>" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Current Programs</a>
+                                <a href="./trainingPlanning.php?student=<?= $student->id ?>" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">البرامج الحالية</a>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                <a href="./addTrainee.php?edit=<?= $student->id ?>" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</a>
+                                <a href="./addTrainee.php?edit=<?= $student->id ?>" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">تعديل</a>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                <a href="./rhTrainee.php?remove=<?= $student->id ?>" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Delete</a>
+                                <a href="./rhTrainee.php?remove=<?= $student->id ?>" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">خذف</a>
                             </td>
                         </tr>
                     <?php } ?>

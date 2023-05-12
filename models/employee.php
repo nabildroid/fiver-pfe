@@ -23,6 +23,7 @@ class Employee
     public $phone;
     public $email;
     public $id;
+    public $success;
 
     public function __construct()
     {
@@ -41,6 +42,14 @@ class Employee
         $this->last_name = $last_name;
         return $this;
     }
+
+    public function setSuccess($success)
+    {
+        $this->success = $success;
+        return $this;
+    }
+
+
 
     public function setNationID($nationID)
     {
@@ -138,6 +147,8 @@ class Employee
 
     public function updateSuccess($success, MySQLConnector $db)
     {
+        $sql = "UPDATE `employees` SET `success` = '$success' WHERE `id` = $this->id";
+        $db->query($sql);
     }
 
     public function insert(MySQLConnector $db)
@@ -176,6 +187,7 @@ class Employee
             ->setPromotion($row['Promotion'])
             ->setPhone($row['phone'])
             ->setEmail($row['email'])
+            ->setSuccess($row['success'])
             ->id = $row['id'];
         return $employee;
     }
@@ -202,6 +214,7 @@ class Employee
                 ->setPromotion($row['Promotion'])
                 ->setPhone($row['phone'])
                 ->setEmail($row['email'])
+                ->setSuccess($row['success'])
                 ->id = $row['id'];
             $employees[] = $employee;
         }

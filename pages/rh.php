@@ -39,7 +39,7 @@ if (isset($_GET["remove"])) {
 
 <?= skeleton(); ?>
 
-<h1 class="text-3xl text-center font-bold text-gray-800 mb-4">Human Resources</h1>
+<h1 class="text-3xl text-center font-bold text-gray-800 mb-4">موارد بشرية</h1>
 
 <div class="flex flex-col mt-8 overflow-hidden">
     <div class="w-full mb-4">
@@ -47,7 +47,7 @@ if (isset($_GET["remove"])) {
 
             <div>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    <a href="addEmployee.php">Add Employee</a>
+                    <a href="addEmployee.php">اضافة موظف</a>
             </div>
             <div class="flex-1"></div>
            
@@ -58,17 +58,17 @@ if (isset($_GET["remove"])) {
                 <thead class="text-left">
                     <tr>
                         <th class="px-4 py-2 shrink-0">ID</th>
-                        <th class="px-4 py-2 shrink-0">Name</th>
-                        <th class="px-4 py-2 shrink-0">National ID</th>
-                        <th class="px-4 py-2 shrink-0">Birthday</th>
-                        <th class="px-4 py-2 shrink-0">Qualification</th>
-                        <th class="px-4 py-2 shrink-0">Type</th>
-                        <th class="px-4 py-2 shrink-0">Degree</th>
-                        <th class="px-4 py-2 shrink-0">Year in Degree</th>
-                        <th class="px-4 py-2 shrink-0">Professional Name</th>
-                        <th class="px-4 py-2 shrink-0">Directory</th>
-                        <th class="px-4 py-2 shrink-0">Section</th>
-                        <th class="px-4 py-2 shrink-0">Type of Degree</th>
+                        <th class="px-4 py-2 shrink-0">الاسم</th>
+                        <th class="px-4 py-2 shrink-0">تعريف الوطني</th>
+                        <th class="px-4 py-2 shrink-0">تاريخ الميلاد</th>
+                        <th class="px-4 py-2 shrink-0">المؤهلات</th>
+                        <th class="px-4 py-2 shrink-0">نوع موظف</th>
+                        <th class="px-4 py-2 shrink-0">الدرجة</th>
+                        <th class="px-4 py-2 shrink-0">عام الدرجة</th>
+                        <th class="px-4 py-2 shrink-0">الاسم المهني</th>
+                        <th class="px-4 py-2 shrink-0">المدييرية</th>
+                        <th class="px-4 py-2 shrink-0">القسم</th>
+                        <th class="px-4 py-2 shrink-0">نوع الدرجة</th>
                         <th class="px-4 py-2 shrink-0"></th>
                     </tr>
                 </thead>
@@ -91,16 +91,19 @@ if (isset($_GET["remove"])) {
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"> <?= $employee->job_title ?></td>
 
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                <a href="./trainingHistory.php?employee=<?= $employee->id ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">All Programs</a>
+                                <a href="./trainingHistory.php?employee=<?= $employee->id ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">جميع البرامج</a>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                <a href="./trainingPlanning.php?employee=<?= $employee->id ?>" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Current Programs</a>
+                                <a href="./trainingPlanning.php?employee=<?= $employee->id ?>" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">البرامج في الخطة</a>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                <a href="./addEmployee.php?edit=<?= $employee->id ?>" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</a>
+                                <a href="./uploadNaming.php?employee=<?= $employee->id ?>" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">كتاب التسمية</a>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                <a href="./rh.php?remove=<?= $employee->id ?>" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Delete</a>
+                                <a href="./addEmployee.php?edit=<?= $employee->id ?>" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">تعديل</a>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                <a href="./rh.php?remove=<?= $employee->id ?>" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">حذف</a>
                             </td>
                         </tr>
                     <?php } ?>

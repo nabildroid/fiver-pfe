@@ -31,17 +31,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <?= skeleton(); ?>
-<h1 class="text-3xl font-bold text-center mb-4">Add New Trainer</h1>
+<h1 class="text-3xl font-bold text-center mb-4">اضافة مدرب</h1>
 
 <div class="max-w-md mx-auto bg-white p-6 rounded shadow">
     <form method="POST">
         <div class="mb-4">
-            <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+            <label for="name" class="block text-gray-700 font-semibold mb-2">الاسم</label>
             <input type="text" id="name" name="name" class="w-full border border-gray-400 px-4 py-2 rounded focus:outline-none focus:border-blue-500" required>
         </div>
 
         <div class="text-center">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add Trainer</button>
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">اضف مدرب</button>
         </div>
     </form>
 

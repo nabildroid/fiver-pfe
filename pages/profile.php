@@ -38,28 +38,28 @@ $completedStudies = array_filter($allStudies, function ($study) {
 
 <?= skeleton(); ?>
 <!-- Employee ID -->
-<h1 class="text-3xl font-bold text-gray-800 mb-4">Employee ID: <?php echo $employee->id; ?></h1>
+<h1 class="text-3xl font-bold text-gray-800 mb-4">رقم الموظف: <?php echo $employee->id; ?></h1>
 
 <!-- Personal Information -->
-<h2 class="text-2xl font-bold text-gray-800 mb-4">Personal Information</h2>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">بيانات الشخصية</h2>
 
 <div class="bg-white rounded-lg overflow-hidden shadow-md mb-8">
     <table class="w-full">
         <tbody>
             <tr>
-                <td class="font-semibold p-2 border-b border-gray-200">Name</td>
+                <td class="font-semibold p-2 border-b border-gray-200">الاسم</td>
                 <td class="p-2 border-b border-gray-200"><?php echo $employee->first_name; ?></td>
             </tr>
             <tr>
-                <td class="font-semibold p-2 border-b border-gray-200">Last Name</td>
+                <td class="font-semibold p-2 border-b border-gray-200">اسم العائلة</td>
                 <td class="p-2 border-b border-gray-200"><?php echo $employee->last_name; ?></td>
             </tr>
             <tr>
-                <td class="font-semibold p-2 border-b border-gray-200">National ID</td>
+                <td class="font-semibold p-2 border-b border-gray-200">تعريف الوطني</td>
                 <td class="p-2 border-b border-gray-200"><?php echo $employee->nationID; ?></td>
             </tr>
             <tr>
-                <td class="font-semibold p-2 border-b border-gray-200">Birthday</td>
+                <td class="font-semibold p-2 border-b border-gray-200">تاريخ الميلاد</td>
                 <td class="p-2 border-b border-gray-200"><?php echo $employee->birthday; ?></td>
             </tr>
         </tbody>
@@ -67,17 +67,17 @@ $completedStudies = array_filter($allStudies, function ($study) {
 </div>
 
 <!-- Contact Information -->
-<h2 class="text-2xl font-bold text-gray-800 mb-4">Contact Information</h2>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">بيانات الاتصال</h2>
 
 <div class="bg-white rounded-lg overflow-hidden shadow-md mb-8">
     <table class="w-full">
         <tbody>
             <tr>
-                <td class="font-semibold p-2 border-b border-gray-200">Phone Number</td>
+                <td class="font-semibold p-2 border-b border-gray-200">رقم الهاتف</td>
                 <td class="p-2 border-b border-gray-200"><?php echo $employee->phone; ?></td>
             </tr>
             <tr>
-                <td class="font-semibold p-2 border-b border-gray-200">Email</td>
+                <td class="font-semibold p-2 border-b border-gray-200">البريد الاليكتوني</td>
                 <td class="p-2 border-b border-gray-200"><?php echo $employee->email; ?></td>
             </tr>
         </tbody>
@@ -85,7 +85,7 @@ $completedStudies = array_filter($allStudies, function ($study) {
 </div>
 
 <!-- Qualifications and Professional Title -->
-<h2 class="text-2xl font-bold text-gray-800 mb-4">Qualifications and Professional Title</h2>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">المؤهلات</h2>
 
 <div class="flex  mb-8">
 
@@ -94,11 +94,11 @@ $completedStudies = array_filter($allStudies, function ($study) {
         <table class="w-full">
             <tbody>
                 <tr>
-                    <td class="font-semibold p-2 border-b border-gray-200">Qualification</td>
+                    <td class="font-semibold p-2 border-b border-gray-200">المؤهل العلمي</td>
                     <td class="p-2 border-b border-gray-200"><?php echo $employee->educational_qualification; ?></td>
                 </tr>
                 <tr>
-                    <td class="font-semibold p-2 border-b border-gray-200">title</td>
+                    <td class="font-semibold p-2 border-b border-gray-200">الوظيفة</td>
                     <td class="p-2 border-b border-gray-200"><?php echo $employee->job_title; ?></td>
                 </tr>
             </tbody>
@@ -110,11 +110,11 @@ $completedStudies = array_filter($allStudies, function ($study) {
         <table class="w-full">
             <tbody>
                 <tr>
-                    <td class="font-semibold p-2 border-b border-gray-200">Department</td>
+                    <td class="font-semibold p-2 border-b border-gray-200">القسم</td>
                     <td class="p-2 border-b border-gray-200"><?php echo $employee->department; ?></td>
                 </tr>
                 <tr>
-                    <td class="font-semibold p-2 border-b border-gray-200">directorate</td>
+                    <td class="font-semibold p-2 border-b border-gray-200">المديرية</td>
                     <td class="p-2 border-b border-gray-200"><?php echo $employee->directorate; ?></td>
                 </tr>
             </tbody>
@@ -124,7 +124,7 @@ $completedStudies = array_filter($allStudies, function ($study) {
 </div>
 
 <!-- Completed Programs -->
-<h2 class="text-2xl font-bold text-gray-800 mb-4">Completed Programs</h2>
+<h2 class="text-2xl font-bold text-gray-800 mb-4">البرنامج المنجزة</h2>
 
 <div class="bg-white rounded-lg overflow-hidden shadow-md mb-8">
     <!-- <div class="flex flex-wrap items-center justify-between border-b border-gray-200 px-4 py-3">
@@ -140,13 +140,12 @@ $completedStudies = array_filter($allStudies, function ($study) {
     <table class="w-full">
         <thead>
             <tr>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">Program Name</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">Direction</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">From</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">To</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">Hours</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">Certification</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">Additional Files</th>
+                <th class="text-left font-semibold p-2 border-b border-gray-200">اسم البرنامج</th>
+                <th class="text-left font-semibold p-2 border-b border-gray-200">الجهة</th>
+                <th class="text-left font-semibold p-2 border-b border-gray-200">من</th>
+                <th class="text-left font-semibold p-2 border-b border-gray-200">الى</th>
+                <th class="text-left font-semibold p-2 border-b border-gray-200">عدد الساعات</th>
+                <th class="text-left font-semibold p-2 border-b border-gray-200">الشهادة</th>
             </tr>
         </thead>
         <tbody>
@@ -159,7 +158,6 @@ $completedStudies = array_filter($allStudies, function ($study) {
                     <td class="p-2 border-b border-gray-200">05/01/2022</td>
                     <td class="p-2 border-b border-gray-200">40</td>
                     <td class="p-2 border-b border-gray-200"><a <a href="../uploads/<?= $study->id ?>.pdf">Certification</a></td>
-                    <td class="p-2 border-b border-gray-200"><a href="#">PDF</a></td>
                 </tr>
             <?php endforeach; ?>
 
@@ -169,13 +167,13 @@ $completedStudies = array_filter($allStudies, function ($study) {
 </div>
 <!-- This Year's Programs -->
 <div class="bg-white rounded-lg overflow-hidden shadow-md w-full md:w-1/2">
-    <h3 class="font-semibold p-2 bg-gray-200 text-gray-800 border-b border-gray-200">This Year's Programs</h3>
+    <h3 class="font-semibold p-2 bg-gray-200 text-gray-800 border-b border-gray-200">برامج الحالية</h3>
     <table class="w-full text-left">
         <thead>
             <tr>
                 <th class="font-semibold p-2 border-b border-gray-200">ID</th>
-                <th class="font-semibold p-2 border-b border-gray-200">Program Name</th>
-                <th class="font-semibold p-2 border-b border-gray-200">Obligatory</th>
+                <th class="font-semibold p-2 border-b border-gray-200">اسم البرنامج</th>
+                <th class="font-semibold p-2 border-b border-gray-200">اجباري</th>
             </tr>
         </thead>
         <tbody>

@@ -1,18 +1,16 @@
 <?php
 
+
+
+$loginPage = true;
+
 include "../services/controller.php";
-
-
 
 
 
 
 // if session exists redirect to index.php
 
-if (isset($_SESSION['user_id'])) {
-    header("Location: index.php");
-    exit;
-}
 
 
 if (isset($_POST['login'])) {
@@ -26,11 +24,13 @@ if (isset($_POST['login'])) {
         $_SESSION['user_id'] = $user->id;
         $_SESSION['user_name'] = $user->name;
         $_SESSION['user_role'] = $user->role;
-        header("Location: ./pages/index.php");
+        header("Location: ./index.php");
         exit;
     } else {
         echo "Invalid credentials";
     }
+} else {
+    session_decode("user_id");
 }
 ?>
 
@@ -47,7 +47,7 @@ if (isset($_POST['login'])) {
 
 </head>
 
-<body>
+<body dir="rtl">
 
 
 
@@ -59,11 +59,11 @@ if (isset($_POST['login'])) {
                 <img src="../logo.png" alt="Logo" class="h-16 mx-auto">
                 <div class="bg-white shadow w-full rounded-lg divide-y divide-gray-200">
                     <div class="px-5 py-7">
-                        <label class="font-semibold text-sm text-gray-600 pb-1 block">User Name</label>
+                        <label class="font-semibold text-sm text-gray-600 pb-1 block">اسم المستخدم</label>
                         <input type="text" name="email" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
-                        <label class="font-semibold text-sm text-gray-600 pb-1 block">Password</label>
+                        <label class="font-semibold text-sm text-gray-600 pb-1 block">كلمة المرور</label>
                         <input type="password" name="password" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
-                        <button type="submit" name="login" class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 rounded text-white px-3 py-2">Login</button>
+                        <button type="submit" name="login" class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 rounded text-white px-3 py-2">دخول</button>
                     </div>
 
                 </div>

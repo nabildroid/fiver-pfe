@@ -24,7 +24,7 @@ include "../services/controller.php";
 
 <?=skeleton()?>
                 <div class="placeholder-image"></div>
-                <p class="text-center mt-4">Welcome to the Home Page!</p>
+                <p class="text-center mt-4">مرحبا!</p>
             </div>
         </div>
     </div>

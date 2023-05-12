@@ -28,7 +28,7 @@ $allStudies = $student->getStudies($db);
 
 // filter out studies that is not for this year
 $studies = array_filter($allStudies, function ($study) {
-    return $study->year == date("Y") && ($study->isDone == "0"||$study->isDone == null);
+    return $study->year == date("Y") && ($study->isDone == "0" || $study->isDone == null);
 });
 
 $people = Student::getAll($db);
@@ -58,47 +58,46 @@ $people = array_map(function ($person) {
 
 <?= skeleton(); ?>
 <div class="pb-8 px-4 py-8 bg-slate-200">
-    <h1 class="text-2xl font-bold mb-4">Training Planning</h1>
+    <h1 class="text-2xl font-bold mb-4">جدولة البرامج</h1>
     <form method="GET" class="flex items-end mb-4">
         <div class="mr-4">
-            <label for="student" class="font-medium">Student:</label>
+            <label for="student" class="font-medium">المتدرب:</label>
             <select id="student" name="<?= isset($_GET['student']) ? "student" : "employee" ?>" class="block w-64 py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
                 <?php foreach ($people as $person) : ?>
                     <option selected="<?= $person["id"] == $student->id ? "true" : "false" ?>" value="<?= $person["id"] ?>"><?= $person["name"] ?></option>
                 <?php endforeach; ?>
             </select>
         </div>
-        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md">Select</button>
+        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md">اختيار</button>
     </form>
     <div>
-        <h2 class="text-lg font-bold mb-2">Student Information</h2>
+        <h2 class="text-lg font-bold mb-2">بيانات المتدرب</h2>
+
         <?php if (isset($_GET['student'])) : ?>
-            <p><span class="font-medium">Name:</span> <?= $student->first_name ?></p>
-            <p><span class="font-medium">Student ID:</span> <?= $student->id ?></p>
-            <p><span class="font-medium">Job Title:</span> <?= $student->university ?></p>
-            <p><span class="font-medium">Directorate:</span> <?= $student->directorate ?></p>
-            <p><span class="font-medium">Department:</span> Development</p>
+            <p><span class="font-medium">الاسم:</span> <?= $student->first_name ?></p>
+            <p><span class="font-medium"> ID:</span> <?= $student->id ?></p>
+            <p><span class="font-medium">الجامعة:</span> <?= $student->university ?></p>
+            <p><span class="font-medium">المديرية:</span> <?= $student->directorate ?></p>
         <?php endif; ?>
 
         <?php if (!isset($_GET['student'])) : ?>
 
-            <p><span class="font-medium">Name:</span> <?= $employee->first_name ?></p>
-            <p><span class="font-medium">Job Title:</span> <?= $employee->job_title ?></p>
-            <p><span class="font-medium">Directorate:</span> <?= $employee->directorate ?></p>
-            <p><span class="font-medium">Department:</span> Development</p>
+            <p><span class="font-medium">الاسم:</span> <?= $employee->first_name ?></p>
+            <p><span class="font-medium">المهنة:</span> <?= $employee->job_title ?></p>
+            <p><span class="font-medium">المديرية:</span> <?= $employee->directorate ?></p>
         <?php endif; ?>
     </div>
 </div>
 <div class="px-4 py-8">
     <div class="flex items-start space-x-4">
-        <h2 class="text-lg font-bold mb-4">Program Assignment</h2>
-        <a href="./assign.php<?= isset($_GET["student"]) ? "?student=" . $student->id : "?employee=" . $employee->id ?>" class="bg-green-500 block text-white py-1 px-2 rounded-md">Add</a>
+        <h2 class="text-lg font-bold mb-4">البرامج</h2>
+        <a href="./assign.php<?= isset($_GET["student"]) ? "?student=" . $student->id : "?employee=" . $employee->id ?>" class="bg-green-500 block text-white py-1 px-2 rounded-md">اضافة</a>
     </div>
     <table class="w-full mb-4 text-left">
         <thead>
             <tr>
-                <th class="py-2 px-4 bg-gray-200">Program Name</th>
-                <th class="py-2 px-4 bg-gray-200">Optional</th>
+                <th class="py-2 px-4 bg-gray-200">اسم البرامج</th>
+                <th class="py-2 px-4 bg-gray-200">اختياري</th>
                 <th class="py-2 px-4 bg-gray-200"></th>
             </tr>
         </thead>
@@ -112,10 +111,10 @@ $people = array_map(function ($person) {
                         <input type="checkbox" name="optional" class="h-4 w-4" <?= $study->isOptional ? "checked" : "" ?>>
                     </td>
                     <td class="py-2 px-4">
-                        <a href="uploadCertificat.php?study=<?=$study->id?>" class="bg-green-500 text-white py-2 px-4 rounded-md">Upload Certification</a>
+                        <a href="uploadCertificat.php?study=<?= $study->id ?>" class="bg-green-500 text-white py-2 px-4 rounded-md">رفع الشهادة</a>
                     </td>
                     <td class="py-2 px-4">
-                        <button class="bg-red-500 text-white py-2 px-4 rounded-md">Delete</button>
+                        <button class="bg-red-500 text-white py-2 px-4 rounded-md">حذف</button>
                     </td>
                 </tr>
             <?php endforeach; ?>

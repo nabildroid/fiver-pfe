@@ -47,7 +47,7 @@ class User
 
     public function setPassword($password)
     {
-        $this->password = $password;
+        $this->password = md5($password);
         return $this;
     }
 
@@ -79,7 +79,7 @@ class User
 
     public function getRole()
     {
-        switch ($this->role) {
+        switch (1) {
             case '1':
                 return 'RH_SPECIAL';
                 break;
