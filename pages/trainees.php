@@ -9,17 +9,15 @@ include "../models/program.php";
 
 
 
-$trainer = new Trainer($user->id, "");
+$trainer = new Trainer($user->trainer, "");
 $students = Student::getAllByTrainer($trainer, $db);
-
-
-
 
 
 
 $programs = Program::getByTrainer($trainer, $db);
 
 
+$noPrograms = false;
 
 if (empty($programs)) {
     $noPrograms = true;
@@ -52,14 +50,14 @@ if (isset($_POST['note'])) {
 
 <?= skeleton(); ?>
 
-<h1 class="text-3xl text-center font-bold text-gray-800 mb-4">Trainees</h1>
+<h1 class="text-3xl text-center font-bold text-gray-800 mb-4">متدربيين</h1>
 
 
 <?php if ($noPrograms) { ?>
     <div class="flex justify-center items-center h-64">
         <div class="text-center">
-            <h1 class="text-3xl text-gray-800 font-bold mb-4">No Programs</h1>
-            <p class="text-gray-600">You don't have any programs yet.</p>
+            <h1 class="text-3xl text-gray-800 font-bold mb-4">لا يوجد برامج او متدربيين</h1>
+            <p class="text-gray-600">ليس لديك تمدربيين الان.</p>
         </div>
     </div>
 <?php } else { ?>
@@ -67,9 +65,9 @@ if (isset($_POST['note'])) {
         <div class="w-full mb-4">
             <div class="flex justify-center items-end p-4">
                 <form method="POST" class="w-full md:w-3/4 space-y-2">
-                    <label class="block font-semibold text-gray-600 mb-2">Course Note:</label>
+                    <label class="block font-semibold text-gray-600 mb-2">ملاحضات البرنامج</label>
                     <textarea name="note" class="block w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter course note"><?= $program->note ?></textarea>
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Save Note</button>
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">حفظ الملاحظة</button>
                 </form>
             </div>
 
@@ -78,11 +76,11 @@ if (isset($_POST['note'])) {
                     <thead class="text-left">
                         <tr>
                             <th class="px-4 py-2 shrink-0">ID</th>
-                            <th class="px-4 py-2 shrink-0">Name</th>
-                            <th class="px-4 py-2 shrink-0">university</th>
-                            <th class="px-4 py-2 shrink-0">email</th>
-                            <th class="px-4 py-2 shrink-0">department</th>
-                            <th class="px-4 py-2 shrink-0">specialization</th>
+                            <th class="px-4 py-2 shrink-0">الاسم</th>
+                            <th class="px-4 py-2 shrink-0">الجامعة</th>
+                            <th class="px-4 py-2 shrink-0">البريد الاليكتوني</th>
+                            <th class="px-4 py-2 shrink-0">القسم</th>
+                            <th class="px-4 py-2 shrink-0">التخصص</th>
 
                         </tr>
                     </thead>
@@ -100,16 +98,16 @@ if (isset($_POST['note'])) {
 
 
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    <a href="./trainingHistory.php?student=<?= $student->id ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">All Programs</a>
+                                    <a href="./trainingHistory.php?student=<?= $student->id ?>" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">جميع البرامج</a>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    <a href="./trainingPlanning.php?student=<?= $student->id ?>" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Current Programs</a>
+                                    <a href="./trainingPlanning.php?student=<?= $student->id ?>" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">البرنامج الحالية</a>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    <a href="./addTrainee.php?edit=<?= $student->id ?>" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Edit</a>
+                                    <a href="./addTrainee.php?edit=<?= $student->id ?>" class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">تعديل</a>
                                 </td>
                                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    <button class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                    <button class="bg-red-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">حذف</button>
                                 </td>
                             </tr>
                         <?php } ?>

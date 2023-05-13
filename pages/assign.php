@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($programs as $program) {
         if (isset($_POST[$program->id])) {
             $student->assignTo($program, $db, false, date("Y"));
-            header("Location: profile.php");
+            header("Location: /pfe/pages");
         }
     }
 }

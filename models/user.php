@@ -79,7 +79,7 @@ class User
 
     public function getRole()
     {
-        switch (1) {
+        switch ($this->role) {
             case '1':
                 return 'RH_SPECIAL';
                 break;
@@ -159,7 +159,7 @@ class User
         $user = new User();
         $user->setName($userName)
             ->setEmail($userName)
-            ->setPassword(md5($userName))
+            ->setPassword($userName)
             ->setRole($role);
 
         $db->query("INSERT INTO users (name, email, password, role) VALUES ('$user->name', '$user->email', '$user->password', '$user->role')");

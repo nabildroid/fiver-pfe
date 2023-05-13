@@ -2,6 +2,7 @@
 
 
 
+
 $loginPage = true;
 
 include "../services/controller.php";
@@ -52,8 +53,8 @@ if (isset($_POST['login'])) {
 
 
 
-    <form action="" method="POST">
-        <div class="flex flex-col items-center justify-center min-h-screen py-2">
+    <form action="" method="POST" class="">
+        <div class=" flex flex-col items-center justify-center min-h-screen py-2">
             <div class="p-10 xs:p-0 mx-auto md:w-full md:max-w-md ">
 
                 <img src="../logo.png" alt="Logo" class="h-16 mx-auto">

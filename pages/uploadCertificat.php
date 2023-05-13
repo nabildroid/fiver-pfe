@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "File uploaded successfully.";
 
         Study::finish($studyID, $db);
-        header("Location: /");
+        header("Location: /pfe/pages");
     } else {
         // Error uploading file
         echo "Error uploading file.";
