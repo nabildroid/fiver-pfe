@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <?= skeleton(); ?>
-<h1 class="text-3xl font-bold text-center mb-4">اضافة مدرب</h1>
+<h1 class="text-3xl font-bold text-center mb-4">اضافة جهة تدريبية</h1>
 
 <div class="max-w-md mx-auto bg-white p-6 rounded shadow">
     <form method="POST">
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
 
         <div class="text-center">
-            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">اضف مدرب</button>
+            <button type="submit" class="bg-slate-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">اضف جهة</button>
         </div>
     </form>
 

@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h2 class="text-xl font-semibold text-gray-800 mb-2">رفع الشهادة</h2>
         <form method="POST" enctype="multipart/form-data">
             <input type="file" name="file" class="mb-4">
-            <input type="submit" value="رفع" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <input type="submit" value="رفع" class="bg-slate-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         </form>
     </div>
 </div>

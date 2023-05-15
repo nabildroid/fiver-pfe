@@ -52,8 +52,6 @@ if (isset($_POST['submit'])) {
     $employee->insert($db);
 
     User::generateEmployee($employee->first_name, $employee->id, $db);
-
-    
 }
 
 
@@ -115,13 +113,30 @@ $isAllowedToSuccess = $user->getRole() == "RH_SPECIAL";
         <input <?= $isAllowedToSuccess ? "disabled" : "" ?> value="<?= $isEdit ? $oldEmp->job_title : '' ?>" class="border border-gray-400 rounded-md py-2 px-3 w-full" type="text" id="job_title" name="job_title">
     </div>
     <div class="mt-4">
-        <label class="block text-gray-700 text-sm font-bold mb-2" for="category">نوع الموظف</label>
-        <input <?= $isAllowedToSuccess ? "disabled" : "" ?> value="<?= $isEdit ? $oldEmp->category : '' ?>" class="border border-gray-400 rounded-md py-2 px-3 w-full" type="text" id="category" name="category">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="category">فئة الموظف</label>
+        <select <?= $isAllowedToSuccess ? "disabled" : "" ?> value="<?= $isEdit ? $oldEmp->category : '' ?>" class="border border-gray-400 rounded-md py-2 px-3 w-full" type="text" id="category" name="category">
+            <option value="اولة">اولة</option>
+            <option value="ثانية">ثانية</option>
+            <option value="ثالثة">ثالثة</option>
+        </select>
     </div>
     <div class="grid grid-cols-2 gap-4 mt-4">
         <div>
             <label class="block text-gray-700 text-sm font-bold mb-2" for="job_grade">الدرجة</label>
-            <input <?= $isAllowedToSuccess ? "disabled" : "" ?> value="<?= $isEdit ? $oldEmp->job_grade : '' ?>" class="border border-gray-400 rounded-md py-2 px-3 w-full" type="text" id="job_grade" name="job_grade">
+            <select <?= $isAllowedToSuccess ? "disabled" : "" ?> value="<?= $isEdit ? $oldEmp->job_grade : '' ?>" class="border border-gray-400 rounded-md py-2 px-3 w-full" id="job_grade" name="job_grade">
+                <option value="خاصة">خاصة</option>
+                <option value="اولة">اولة</option>
+                <option value="ثانية">ثانية</option>
+                <option value="ثالثة">ثالثة</option>
+                <option value="رابعة">رابعة</option>
+                <option value="خامسة">خامسة</option>
+                <option value="سادسة">سادسة</option>
+                <option value="سابعة">سابعة</option>
+                <option value="ثامنة">ثامنة</option>
+                <option value="تاسعة">تاسعة</option>
+            </select>
+
+
         </div>
         <div>
             <label class="block text-gray-700 text-sm font-bold mb-2" for="year_grade">عام الدرجة</label>
@@ -157,7 +172,7 @@ $isAllowedToSuccess = $user->getRole() == "RH_SPECIAL";
     <?php } ?>
 
     <div class="mt-8">
-        <button name="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
+        <button name="submit" class="bg-slate-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
             <?= $isEdit ? "تحديث" : "اضافة" ?> الموضف
         </button>
     </div>

@@ -1,9 +1,9 @@
 <?php
 include "../services/controller.php";
 
-require "../models/employee.php";
-require "../models/student.php";
-require "../models/program.php";
+require_once"../models/employee.php";
+require_once"../models/student.php";
+require_once"../models/program.php";
 
 
 
@@ -68,7 +68,7 @@ $people = array_map(function ($person) {
                 <?php endforeach; ?>
             </select>
         </div>
-        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md">اختيار</button>
+        <button type="submit" class="bg-slate-500 text-white py-2 px-4 rounded-md">اختيار</button>
     </form>
     <div>
         <h2 class="text-lg font-bold mb-2">بيانات المتدرب</h2>
@@ -96,9 +96,9 @@ $people = array_map(function ($person) {
     <table class="w-full mb-4 text-left">
         <thead>
             <tr>
-                <th class="py-2 px-4 bg-gray-200">اسم البرامج</th>
-                <th class="py-2 px-4 bg-gray-200">اختياري</th>
-                <th class="py-2 px-4 bg-gray-200"></th>
+                <th class="whitespace-nowrap py-2 px-4 bg-gray-200">اسم البرامج</th>
+                <th class="whitespace-nowrap py-2 px-4 bg-gray-200">اختياري</th>
+                <th class="whitespace-nowrap py-2 px-4 bg-gray-200"></th>
             </tr>
         </thead>
         <tbody>

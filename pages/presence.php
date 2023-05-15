@@ -28,7 +28,7 @@ include "../services/controller.php";
                 <input class="border border-gray-400 p-1 rounded-md" type="date" name="from_date" />
                 <label class="mx-2 font-semibold text-gray-700">to</label>
                 <input class="border border-gray-400 p-1 rounded-md" type="date" name="to_date" />
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded-md ml-4">
+                <button class="bg-slate-500 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded-md ml-4">
                     Filter
                 </button>
             </div>
@@ -39,17 +39,17 @@ include "../services/controller.php";
             <table class="w-full">
                 <thead>
                     <tr>
-                        <th class="font-semibold p-2 border-b border-gray-200">ID</th>
-                        <th class="font-semibold p-2 border-b border-gray-200">Name</th>
-                        <th class="font-semibold p-2 border-b border-gray-200">
+                        <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">ID</th>
+                        <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">Name</th>
+                        <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">
                             Professional Title
                         </th>
-                        <th class="font-semibold p-2 border-b border-gray-200">Directory</th>
-                        <th class="font-semibold p-2 border-b border-gray-200">Section</th>
-                        <th class="font-semibold p-2 border-b border-gray-200">Program</th>
-                        <th class="font-semibold p-2 border-b border-gray-200">From</th>
-                        <th class="font-semibold p-2 border-b border-gray-200">To</th>
-                        <th class="font-semibold p-2 border-b border-gray-200">PDF</th>
+                        <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">Directory</th>
+                        <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">Section</th>
+                        <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">Program</th>
+                        <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">From</th>
+                        <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">To</th>
+                        <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">PDF</th>
                     </tr>
                 </thead>
                 <tbody>

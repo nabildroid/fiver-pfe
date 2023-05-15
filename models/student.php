@@ -1,5 +1,6 @@
 <?php
-require 'study.php';
+require_once 'study.php';
+require_once 'program.php';
 
 class Student
 {

@@ -1,9 +1,9 @@
 <?php
 include "../services/controller.php";
 
-require "../models/employee.php";
-require "../models/student.php";
-require "../models/program.php";
+require_once"../models/employee.php";
+require_once"../models/student.php";
+require_once"../models/program.php";
 
 if (!isset($_GET['employee']) && !isset($_GET['student'])) {
     header("Location: /");
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <li class="flex items-center justify-between py-2">
                         <span class="mr-4">ID: <?= $program->id ?></span>
                         <span class="mr-4">اسم البرنامج: <?= $program->name ?></span>
-                        <button type="submit" name="<?= $program->id ?>" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">تعيين</button>
+                        <button type="submit" name="<?= $program->id ?>" class="bg-slate-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">تعيين</button>
                     </li>
                 <?php endforeach; ?>
 

@@ -64,7 +64,7 @@ if (isset($_POST['login'])) {
                         <input type="text" name="email" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
                         <label class="font-semibold text-sm text-gray-600 pb-1 block">كلمة المرور</label>
                         <input type="password" name="password" class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full" />
-                        <button type="submit" name="login" class="transition duration-200 bg-blue-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 rounded text-white px-3 py-2">دخول</button>
+                        <button type="submit" name="login" class="transition duration-200 bg-slate-500 hover:bg-blue-600 focus:bg-blue-700 focus:shadow-sm focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 rounded text-white px-3 py-2">دخول</button>
                     </div>
 
                 </div>

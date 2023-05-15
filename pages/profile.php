@@ -1,9 +1,9 @@
 <?php
 include "../services/controller.php";
 
-require "../models/employee.php";
-require "../models/student.php";
-require "../models/program.php";
+require_once"../models/employee.php";
+require_once"../models/student.php";
+require_once"../models/program.php";
 
 
 
@@ -134,18 +134,18 @@ $completedStudies = array_filter($allStudies, function ($study) {
             <input type="date" id="from-date" name="from-date" class="border border-gray-400 px-2 py-1 rounded-lg mr-2">
             <label for="to-date" class="mr-2">To:</label>
             <input type="date" id="to-date" name="to-date" class="border border-gray-400 px-2 py-1 rounded-lg mr-2">
-            <button class="bg-blue-500 text-white rounded-lg px-4 py-1">Apply</button>
+            <button class="bg-slate-500 text-white rounded-lg px-4 py-1">Apply</button>
         </div>
     </div> -->
     <table class="w-full">
         <thead>
             <tr>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">اسم البرنامج</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">الجهة</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">من</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">الى</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">عدد الساعات</th>
-                <th class="text-left font-semibold p-2 border-b border-gray-200">الشهادة</th>
+                <th class="whitespace-nowrap text-left font-semibold p-2 border-b border-gray-200">اسم البرنامج</th>
+                <th class="whitespace-nowrap text-left font-semibold p-2 border-b border-gray-200">الجهة</th>
+                <th class="whitespace-nowrap text-left font-semibold p-2 border-b border-gray-200">من</th>
+                <th class="whitespace-nowrap text-left font-semibold p-2 border-b border-gray-200">الى</th>
+                <th class="whitespace-nowrap text-left font-semibold p-2 border-b border-gray-200">عدد الساعات</th>
+                <th class="whitespace-nowrap text-left font-semibold p-2 border-b border-gray-200">الشهادة</th>
             </tr>
         </thead>
         <tbody>
@@ -154,9 +154,9 @@ $completedStudies = array_filter($allStudies, function ($study) {
                 <tr>
                     <td class="p-2 border-b border-gray-200"><?= $study->program->name ?></td>
                     <td class="p-2 border-b border-gray-200"><?= $study->program->institution_name ?></td>
-                    <td class="p-2 border-b border-gray-200">01/01/2022</td>
-                    <td class="p-2 border-b border-gray-200">05/01/2022</td>
-                    <td class="p-2 border-b border-gray-200">40</td>
+                    <td class="p-2 border-b border-gray-200"><?= $study->program->start ?></td>
+                    <td class="p-2 border-b border-gray-200"><?= $study->program->end ?></td>
+                    <td class="p-2 border-b border-gray-200"><?= $study->program->number_of_hours?></td>
                     <td class="p-2 border-b border-gray-200"><a <a href="../uploads/<?= $study->id ?>.pdf">Certification</a></td>
                 </tr>
             <?php endforeach; ?>
@@ -171,9 +171,9 @@ $completedStudies = array_filter($allStudies, function ($study) {
     <table class="w-full text-left">
         <thead>
             <tr>
-                <th class="font-semibold p-2 border-b border-gray-200">ID</th>
-                <th class="font-semibold p-2 border-b border-gray-200">اسم البرنامج</th>
-                <th class="font-semibold p-2 border-b border-gray-200">اجباري</th>
+                <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">ID</th>
+                <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">اسم البرنامج</th>
+                <th class="whitespace-nowrap font-semibold p-2 border-b border-gray-200">اجباري</th>
             </tr>
         </thead>
         <tbody>

@@ -46,7 +46,7 @@ if (isset($_POST['newPassword'])) {
                     <input type="password" id="confirmPassword" name="confirmPassword" class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
                 </div>
                 <div class="flex justify-end mt-6">
-                    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">تغيير</button>
+                    <button type="submit" class="bg-slate-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">تغيير</button>
                 </div>
             </form>
         </div>

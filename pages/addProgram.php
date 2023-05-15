@@ -23,7 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ->setInternalOrExternal($_POST['internalOrExternal'])
         ->setLocation($_POST['location'])
         ->setNumberOfHours($_POST['numberOfHours'])
-        ->setNumberOfDays($_POST['numberOfDays']);
+        ->setNumberOfDays($_POST['numberOfDays'])
+        ->setEnd($_POST['end'])
+        ->setStart($_POST['start']);
+
+
+
 
     $trainer = new Trainer($_POST['trainerID'], "");
 
@@ -86,6 +91,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="numberOfDays" class="block text-gray-700 font-medium mb-2">عدد الايام:</label>
                     <input type="number" id="numberOfDays" name="numberOfDays" class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
                 </div>
+                <div class="mb-4">
+                    <label for="numberOfDays" class="block text-gray-700 font-medium mb-2">يبدأ من:</label>
+                    <input type="date" id="numberOfDays" name="start" class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="numberOfDays" class="block text-gray-700 font-medium mb-2">ينتهي عند:</label>
+                    <input type="date" id="numberOfDays" name="end" class="border border-gray-300 rounded-md py-2 px-4 focus:outline-none focus:ring focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
 
                 <div class="mb-4">
                     <label for="trainer" class="block text-gray-700 font-medium mb-2">المدرب</label>
@@ -103,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 
     <div class="flex justify-end mt-6">
-        <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md">حفظ</button>
+        <button type="submit" class="bg-slate-500 text-white py-2 px-4 rounded-md">حفظ</button>
     </div>
 </form>
 </body>

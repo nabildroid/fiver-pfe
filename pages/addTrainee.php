@@ -27,6 +27,23 @@ if (isset($_POST['submit'])) {
         ->setSpecialization($_POST['specialization']);
 
     $student->insert($db);
+
+    $targetDir = "../uploads/";
+    // fileName with random string
+    $fileName1 = $student->id . ".from.pdf";
+    $fileName2 = $student->id . ".accept.pdf";
+    $targetPath1 = $targetDir . $fileName1;
+    $targetPath2 = $targetDir . $fileName2;
+
+    if (move_uploaded_file($_FILES["file1"]["tmp_name"], $targetPath1) && move_uploaded_file($_FILES["file2"]["tmp_name"], $targetPath2)) {
+        // File uploaded successfully
+        echo "File uploaded successfully.";
+
+        header("Location: ./");
+    } else {
+        // Error uploading file
+        echo "Error uploading file.";
+    }
 }
 
 
@@ -48,7 +65,7 @@ $isAllowedToSuccess = $_SESSION['user_role'] == 1;
 
 <?= skeleton() ?>
 <h1 class="text-3xl font-bold text-gray-800 mb-4">اضافة متدرب</h1>
-<form method="POST" class="bg-white rounded-lg overflow-hidden shadow-md p-8">
+<form enctype="multipart/form-data" method="POST" class="bg-white rounded-lg overflow-hidden shadow-md p-8">
 
     <div class="grid grid-cols-2 gap-4">
         <div>
@@ -92,9 +109,20 @@ $isAllowedToSuccess = $_SESSION['user_role'] == 1;
         <input value="<?= $isEdit ? $oldEmp->email : '' ?>" class="border border-gray-400 rounded-md py-2 px-3 w-full" type="email" id="email" name="email">
     </div>
 
+    <div class="mt-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="file">كتاب الجهة</label>
+        <input class="border border-gray-400 rounded-md py-2 px-3 w-full" type="file" id="file" name="file1">
+    </div>
+
+    <div class="mt-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="file">كتاب الموافقة</label>
+        <input class="border border-gray-400 rounded-md py-2 px-3 w-full" type="file" id="file" name="file2">
+
+    </div>
+
 
     <div class="mt-8">
-        <button name="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
+        <button name="submit" class="bg-slate-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">
             <?= $isEdit ? "تعديل" : "اضافة" ?> متدرب
         </button>
     </div>

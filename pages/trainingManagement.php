@@ -48,7 +48,7 @@ include "../models/employee.php";
                     <option value="Finance">Finance</option>
                 </select>
             </div>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded-md ml-4">
+            <button class="bg-slate-500 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded-md ml-4">
                     Filter
                 </button>
         </div>
@@ -58,19 +58,19 @@ include "../models/employee.php";
 
             <thead>
                 <tr class="bg-gray-200">
-                    <th class="py-2 px-4">ID</th>
-                    <th class="py-2 px-4">Name</th>
-                    <th class="py-2 px-4">Nation ID</th>
-                    <th class="py-2 px-4">Birthday</th>
-                    <th class="py-2 px-4">Qualification</th>
-                    <th class="py-2 px-4">Type</th>
-                    <th class="py-2 px-4">Year in Degree</th>
-                    <th class="py-2 px-4">Professional Title</th>
-                    <th class="py-2 px-4">Directory</th>
-                    <th class="py-2 px-4">Section</th>
-                    <th class="py-2 px-4">Type of Degree</th>
-                    <th class="py-2 px-4"></th>
-                    <th class="py-2 px-4"></th>
+                    <th class="whitespace-nowrap py-2 px-4">ID</th>
+                    <th class="whitespace-nowrap py-2 px-4">Name</th>
+                    <th class="whitespace-nowrap py-2 px-4">Nation ID</th>
+                    <th class="whitespace-nowrap py-2 px-4">Birthday</th>
+                    <th class="whitespace-nowrap py-2 px-4">Qualification</th>
+                    <th class="whitespace-nowrap py-2 px-4">Type</th>
+                    <th class="whitespace-nowrap py-2 px-4">Year in Degree</th>
+                    <th class="whitespace-nowrap py-2 px-4">Professional Title</th>
+                    <th class="whitespace-nowrap py-2 px-4">Directory</th>
+                    <th class="whitespace-nowrap py-2 px-4">Section</th>
+                    <th class="whitespace-nowrap py-2 px-4">Type of Degree</th>
+                    <th class="whitespace-nowrap py-2 px-4"></th>
+                    <th class="whitespace-nowrap py-2 px-4"></th>
                 </tr>
             </thead>
             <tbody>
@@ -87,10 +87,10 @@ include "../models/employee.php";
                     <td class="py-2 px-4">Development</td>
                     <td class="py-2 px-4">Type X</td>
                     <td class="py-2 px-4">
-                        <button class="bg-blue-500 text-white py-1 px-2 rounded-md">Completed Courses</button>
+                        <button class="bg-slate-500 text-white py-1 px-2 rounded-md">Completed Courses</button>
                     </td>
                     <td class="py-2 px-4">
-                        <button class="bg-blue-500 text-white py-1 px-2 rounded-md">Current Planning</button>
+                        <button class="bg-slate-500 text-white py-1 px-2 rounded-md">Current Planning</button>
                     </td>
                 </tr>
 

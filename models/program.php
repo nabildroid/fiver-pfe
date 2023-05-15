@@ -13,6 +13,8 @@ class Program
     public $note = "";
     public $id;
     public $trainer;
+    public $start;
+    public $end;
 
     public function __construct()
     {
@@ -21,6 +23,19 @@ class Program
     public function setName($name)
     {
         $this->name = $name;
+        return $this;
+    }
+
+    public function setStart($date)
+    {
+        $this->start = $date;
+        return $this;
+    }
+
+
+    public function setEnd($date)
+    {
+        $this->end = $date;
         return $this;
     }
 
@@ -76,7 +91,7 @@ class Program
 
     public function insert(Trainer $trainer, MySQLConnector $db)
     {
-        $sql = "INSERT INTO `program` (`trainer`,`program_name`,`note`, `program_type`, `institution_name`, `internal_or_external`, `location`, `number_of_hours`, `number_of_days`) VALUES ('$trainer->id','$this->name','$this->note', '$this->type', '$this->institution_name', '$this->internal_or_external', '$this->location', '$this->number_of_hours', '$this->number_of_days')";
+        $sql = "INSERT INTO `program` (`start`,`end`,`trainer`,`program_name`,`note`, `program_type`, `institution_name`, `internal_or_external`, `location`, `number_of_hours`, `number_of_days`) VALUES ('$this->start','$this->end','$trainer->id','$this->name','$this->note', '$this->type', '$this->institution_name', '$this->internal_or_external', '$this->location', '$this->number_of_hours', '$this->number_of_days')";
 
         $db->query($sql);
         $this->id = $db->getLastInsertedId();
@@ -84,7 +99,7 @@ class Program
 
     public function update(MySQLConnector $db)
     {
-        $sql = "UPDATE `program` SET `program_name` = '$this->name', `note` = '$this->note', `program_type` = '$this->type', `institution_name` = '$this->institution_name', `internal_or_external` = '$this->internal_or_external', `location` = '$this->location', `number_of_hours` = '$this->number_of_hours', `number_of_days` = '$this->number_of_days' WHERE `id` = $this->id";
+        $sql = "UPDATE `program` SET `program_name` = '$this->name', `end` = '$this->end',`start` = '$this->start', `note` = '$this->note', `program_type` = '$this->type', `institution_name` = '$this->institution_name', `internal_or_external` = '$this->internal_or_external', `location` = '$this->location', `number_of_hours` = '$this->number_of_hours', `number_of_days` = '$this->number_of_days' WHERE `id` = $this->id";
 
         $db->query($sql);
     }
@@ -102,6 +117,8 @@ class Program
             ->setLocation($row['location'])
             ->setNumberOfHours($row['number_of_hours'])
             ->setNumberOfDays($row['number_of_days'])
+            ->setEnd($row['end'])
+            ->setStart($row['start'])
             ->id = $row['id'];
 
         $trainer = Trainer::get($row['trainer'], $db);
@@ -127,6 +144,8 @@ class Program
                 ->setNumberOfHours($row['number_of_hours'])
                 ->setNumberOfDays($row['number_of_days'])
                 ->setNote($row['note'])
+                ->setEnd($row['end'])
+                ->setStart($row['start'])
                 ->id = $row['id'];
 
             $trainer = Trainer::get($row['trainer'], $db);
@@ -150,6 +169,8 @@ class Program
                 ->setLocation($row['location'])
                 ->setNumberOfHours($row['number_of_hours'])
                 ->setNumberOfDays($row['number_of_days'])
+                ->setEnd($row['end'])
+                ->setStart($row['start'])
                 ->id = $row['id'];
 
             $trainer = Trainer::get($row['trainer'], $db);
